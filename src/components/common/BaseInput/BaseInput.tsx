@@ -1,5 +1,4 @@
 import { FC, useEffect, ChangeEvent, ReactElement } from "react";
-import BaseLabel from "../BaseLabel";
 import BaseErrorMessage from "../BaseErrorMessage";
 import styles from "./BaseInput.module.scss";
 import BaseText from "../BaseText";
