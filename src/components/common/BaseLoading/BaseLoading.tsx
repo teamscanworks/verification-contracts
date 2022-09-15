@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-import { FC } from "react";
-import c from "classnames";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { motion } from 'framer-motion';
+import { FC } from 'react';
+import c from 'classnames';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
-import styles from "./BaseLoading.module.scss";
+import styles from './BaseLoading.module.scss';
 
 interface Props {
   center?: boolean;
@@ -11,11 +11,7 @@ interface Props {
   marginTop?: number | string;
 }
 
-const BaseLoading: FC<Props> = ({
-  center,
-  marginTop = 0,
-  isLoadingButton = false,
-}) => {
+const BaseLoading: FC<Props> = ({ center, marginTop = 0, isLoadingButton = false }) => {
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -27,11 +23,11 @@ const BaseLoading: FC<Props> = ({
       animate="visible"
       variants={variants}
       style={{ marginTop }}
-      transition={{ ease: "easeOut", delay: 0.1 }}
+      transition={{ ease: 'easeOut', delay: 0.1 }}
       className={c(
         styles.container,
         center && styles.center,
-        isLoadingButton && styles.isLoading
+        isLoadingButton && styles.isLoading,
       )}
     >
       <AiOutlineLoading3Quarters

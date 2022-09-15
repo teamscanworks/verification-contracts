@@ -1,8 +1,8 @@
-import BaseText from "components/common/BaseText";
-import { FC } from "react";
-import { ScanworksLogo } from "../../../../../public/assets/logos";
+import { FC } from 'react';
+import BaseText from 'components/common/BaseText';
+import { ScanworksLogo } from '../../../../../public/assets/logos';
 
-import styles from "./Navbar.module.scss";
+import styles from './Navbar.module.scss';
 
 const Navbar: FC = () => {
   return (

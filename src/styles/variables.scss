@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@400;700&family=Roboto:ital,wght@0,100;0,400;0,700;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@400;700&family=Roboto:ital,wght@0,100;0,400;0,700;1,400&display=swap');
 
 :root {
   transition-duration: 0.3s;
   transition-timing-function: linear;
 
   //fonts
-  --main-font: "Inter", sans-serif;
+  --main-font: 'Inter', sans-serif;
   --base-text-color: var(--foreground);
   --ligth: #fff;
   --dark: #1b222b;

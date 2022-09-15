@@ -1,7 +1,7 @@
-import { FC, ReactElement } from "react";
-import BaseText from "../BaseText";
+import { FC, ReactElement } from 'react';
+import BaseText from '../BaseText';
 
-import styles from "./BasePill.module.scss";
+import styles from './BasePill.module.scss';
 
 interface Props {
   text?: string;
@@ -18,7 +18,7 @@ interface Props {
 const BasePill: FC<Props> = ({
   size,
   color,
-  text = "",
+  text = '',
   iconLeft,
   marginTop,
   marginLeft,

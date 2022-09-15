@@ -1,6 +1,6 @@
-import { FC, ReactElement } from "react";
-import c from "classnames";
-import styles from "./BaseButton.module.scss";
+import { FC, ReactElement } from 'react';
+import c from 'classnames';
+import styles from './BaseButton.module.scss';
 
 interface Props {
   text?: string;
@@ -30,15 +30,15 @@ interface Props {
 }
 
 const BaseButton: FC<Props> = ({
-  text = "",
-  type = "",
-  testId = "",
-  textColor = "",
+  text = '',
+  type = '',
+  testId = '',
+  textColor = '',
   iconLeft = null,
   iconRight = null,
   fontSize = 16,
   small = false,
-  keyPress = "",
+  keyPress = '',
   large = false,
   marginTop = 0,
   medium = false,
@@ -47,7 +47,7 @@ const BaseButton: FC<Props> = ({
   disabled = false,
   secundary = false,
   isLoading = false,
-  backgroundColor = "",
+  backgroundColor = '',
   onClick = () => {},
   className = null,
   isButtonLink = false,
@@ -82,10 +82,10 @@ const BaseButton: FC<Props> = ({
         success && styles.buttonStateSuccess,
         disabled && styles.buttonStateDisabled,
         secundary && styles.secundary,
-        isButtonLink && styles.isButtonLink
+        isButtonLink && styles.isButtonLink,
       )}
       style={{ backgroundColor, marginTop, marginBottom }}
-      type={type === "submit" ? "submit" : "button"}
+      type={type === 'submit' ? 'submit' : 'button'}
     >
       {iconLeft && <div className={styles.iconLeft}>{iconLeft}</div>}
       <div style={{ color: textColor, fontSize }} className={styles.text}>

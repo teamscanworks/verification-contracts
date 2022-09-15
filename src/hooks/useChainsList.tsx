@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { getChains } from "services/contractRegistryQueries";
+import { useEffect, useState } from 'react';
+import { getChains } from 'services/contractRegistryQueries';
 
 export const useChainsList = async () => {
   const [optionsNetworks, setOptionsNetworks]: any = useState([]);

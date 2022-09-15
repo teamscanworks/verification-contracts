@@ -1,20 +1,20 @@
-import { useEffect, useCallback, useState } from "react";
-import BaseInput from "components/common/BaseInput";
-import BaseButton from "components/common/BaseButton";
-import BaseSelectInput from "components/common/BaseSelectInput";
-import { useFormik } from "formik";
-import type { NextPage } from "next";
-import Head from "next/head";
-import { getChains, getRegistry } from "services/contractRegistryQueries";
-import BaseText from "components/common/BaseText";
-import BasePill from "components/common/BasePill";
-import { validationFormSchema } from "utils/validateFormSchema";
-import BaseLoading from "components/common/BaseLoading";
-import FadeIn from "components/common/FadeIn";
-import { AiFillGithub, AiFillTwitterCircle } from "react-icons/ai";
-import { getIconNetworks } from "utils/getIconNetworks";
+import { useEffect, useCallback, useState } from 'react';
+import BaseInput from 'components/common/BaseInput';
+import BaseButton from 'components/common/BaseButton';
+import BaseSelectInput from 'components/common/BaseSelectInput';
+import { useFormik } from 'formik';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { getChains, getRegistry } from 'services/contractRegistryQueries';
+import BaseText from 'components/common/BaseText';
+import BasePill from 'components/common/BasePill';
+import { validationFormSchema } from 'utils/validateFormSchema';
+import BaseLoading from 'components/common/BaseLoading';
+import FadeIn from 'components/common/FadeIn';
+import { AiFillGithub, AiFillTwitterCircle } from 'react-icons/ai';
+import { getIconNetworks } from 'utils/getIconNetworks';
 
-import styles from "../styles/Home.module.scss";
+import styles from '../styles/Home.module.scss';
 
 const Home: NextPage = () => {
   const [optionsNetworks, setOptionsNetworks]: any = useState([]);
@@ -32,29 +32,23 @@ const Home: NextPage = () => {
   };
 
   useEffect(() => {
-    getChainsList();
+    if (optionsNetworks.length === 0) {
+      getChainsList();
+    }
   });
 
-  const AddressessSelectComponent = useCallback(
-    (props: { data: { label: string } }) => {
-      const { data, innerRef, innerProps }: any = props;
-      return (
-        <div ref={innerRef} {...innerProps} className={styles.selectOptions}>
-          {getIconNetworks(data.label)}
-          <BaseText
-            bold
-            size={18}
-            text={data.label}
-            className={styles.selectTitle}
-          />
-        </div>
-      );
-    },
-    []
-  );
+  const AddressessSelectComponent = useCallback((props: { data: { label: string } }) => {
+    const { data, innerRef, innerProps }: any = props;
+    return (
+      <div ref={innerRef} {...innerProps} className={styles.selectOptions}>
+        {getIconNetworks(data.label)}
+        <BaseText bold size={18} text={data.label} className={styles.selectTitle} />
+      </div>
+    );
+  }, []);
 
   const formik = useFormik({
-    initialValues: { codeId: "", network: "" },
+    initialValues: { codeId: '', network: '' },
     validationSchema: validationFormSchema,
     onSubmit: async (values: any) => {
       setJsonData(null);
@@ -67,9 +61,9 @@ const Home: NextPage = () => {
 
   const { handleChange, handleSubmit, values, setFieldValue, errors } = formik;
 
-  const verifiedText = jsonData?.verified ? "Is verified" : "Not verified";
-  const varifiesColorPill = jsonData?.verified ? "#91e697" : "#cf1124";
-  const varifiesColorTextPill = jsonData?.verified ? "#1e1e20" : "#ffffff";
+  const verifiedText = jsonData?.verified ? 'Is verified' : 'Not verified';
+  const varifiesColorPill = jsonData?.verified ? '#91e697' : '#cf1124';
+  const varifiesColorTextPill = jsonData?.verified ? '#1e1e20' : '#ffffff';
 
   return (
     <div className={styles.container}>
@@ -87,7 +81,7 @@ const Home: NextPage = () => {
             options={optionsNetworks}
             placeholder="Select network"
             setFieldValue={setFieldValue}
-            errorMessage={errors.network}
+            errorMessage={errors?.network || ''}
             myCustomOptions={AddressessSelectComponent}
           />
           <BaseInput
@@ -97,7 +91,7 @@ const Home: NextPage = () => {
             value={values.codeId}
             handleChange={handleChange}
             placeholder="Enter code id"
-            errorMessage={errors.codeId}
+            errorMessage={errors?.codeId || ''}
           />
           <div className={styles.submitContainer}>
             <BaseButton keyPress="Enter" text="Search" onClick={handleSubmit} />
@@ -117,9 +111,7 @@ const Home: NextPage = () => {
             <>
               {jsonData && (
                 <FadeIn>
-                  <pre className={styles.json}>
-                    {JSON.stringify(jsonData, null, 2)}
-                  </pre>
+                  <pre className={styles.json}>{JSON.stringify(jsonData, null, 2)}</pre>
                 </FadeIn>
               )}
             </>

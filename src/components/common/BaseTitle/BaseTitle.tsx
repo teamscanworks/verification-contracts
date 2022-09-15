@@ -1,6 +1,6 @@
-import { FC } from "react";
-import c from "classnames";
-import styles from "./BaseTitle.module.scss";
+import { FC } from 'react';
+import c from 'classnames';
+import styles from './BaseTitle.module.scss';
 
 interface Props {
   size?: number;
@@ -44,7 +44,7 @@ const BaseTitle: FC<Props> = ({
         styles.title,
         center && styles.center,
         pointer && styles.pointer,
-        className && className
+        className && className,
       )}
     >
       {title}

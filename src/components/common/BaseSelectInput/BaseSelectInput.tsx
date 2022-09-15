@@ -1,8 +1,9 @@
-import { FC } from "react";
-import Select from "react-select";
-import BaseErrorMessage from "../BaseErrorMessage";
-import BaseText from "../BaseText";
-import styles from "./BaseSelectInput.module.scss";
+import { FC } from 'react';
+import Select from 'react-select';
+import BaseErrorMessage from '../BaseErrorMessage';
+import BaseText from '../BaseText';
+import { FormikErrors } from 'formik';
+import styles from './BaseSelectInput.module.scss';
 
 type OptionType = { label: string; value: string }[];
 
@@ -20,29 +21,29 @@ interface ISelectInputProps {
   myCustomOptions?: any;
   isClearable?: boolean;
   marginBottom?: number;
-  errorMessage?: string;
   isSearcheable?: boolean;
+  errorMessage: FormikErrors<string> | string;
 }
 
 const BaseSelectInput: FC<ISelectInputProps> = ({
   value,
   options,
   isLoading,
-  label = "",
+  label = '',
   setFieldValue,
   marginTop = 0,
   isMulti = false,
-  inputName = "",
+  inputName = '',
   myCustomOptions,
   marginBottom = 0,
-  placeholder = "",
-  errorMessage = null,
+  placeholder = '',
+  errorMessage = '',
   isClearable = false,
 }) => {
   const customStyles = {
     control: (provided: any) => ({
       ...provided,
-      cursor: "pointer",
+      cursor: 'pointer',
     }),
     dropdownIndicator: (base: any) => ({
       ...base,
@@ -89,9 +90,7 @@ const BaseSelectInput: FC<ISelectInputProps> = ({
         className={styles.select}
         isClearable={isClearable}
         components={
-          myCustomOptions
-            ? { Option: myCustomOptions }
-            : { IndicatorSeparator: null }
+          myCustomOptions ? { Option: myCustomOptions } : { IndicatorSeparator: null }
         }
         value={setValues(options, value, isMulti)}
         onChange={(option: any) => {
@@ -101,9 +100,9 @@ const BaseSelectInput: FC<ISelectInputProps> = ({
           ...theme,
           colors: {
             ...theme,
-            primary25: "#31b237",
-            neutral50: "#1e1e20",
-            neutral0: "#fff",
+            primary25: '#31b237',
+            neutral50: '#1e1e20',
+            neutral0: '#fff',
           },
         })}
       />

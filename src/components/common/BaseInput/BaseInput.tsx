@@ -1,7 +1,7 @@
-import { FC, useEffect, ChangeEvent, ReactElement } from "react";
-import BaseErrorMessage from "../BaseErrorMessage";
-import styles from "./BaseInput.module.scss";
-import BaseText from "../BaseText";
+import { FC, useEffect, ChangeEvent, ReactElement } from 'react';
+import BaseErrorMessage from '../BaseErrorMessage';
+import styles from './BaseInput.module.scss';
+import BaseText from '../BaseText';
 
 interface Props {
   value?: any;
@@ -20,16 +20,16 @@ interface Props {
   autoComplete?: string;
   onPaste?: (e: any) => void;
   onBlur?: (value: string) => void;
-  errorMessage?: string | undefined;
+  errorMessage?: string;
   onKeyPress?: (value: string) => void;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const BaseInput: FC<Props> = ({
   inputName,
-  value = "",
-  label = "",
-  type = "text",
+  value = '',
+  label = '',
+  type = 'text',
   onBlur = null,
   marginTop = 0,
   inputRef = null,
@@ -38,11 +38,11 @@ const BaseInput: FC<Props> = ({
   multiple = false,
   disabled = false,
   marginBottom = 0,
-  placeholder = "",
-  errorMessage = "",
+  placeholder = '',
+  errorMessage = '',
   onKeyPress = null,
   onPaste = () => {},
-  autoComplete = "off",
+  autoComplete = 'off',
   handleChange = () => {},
 }) => {
   useEffect(() => {
