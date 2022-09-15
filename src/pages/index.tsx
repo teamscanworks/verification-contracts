@@ -59,12 +59,11 @@ const Home: NextPage = () => {
     },
   });
 
-  const { handleChange, handleSubmit, values, setFieldValue, errors } = formik;
+  const { handleChange, handleSubmit, values, setFieldValue, errors }: any = formik;
 
   const verifiedText = jsonData?.verified ? 'Is verified' : 'Not verified';
   const varifiesColorPill = jsonData?.verified ? '#91e697' : '#cf1124';
   const varifiesColorTextPill = jsonData?.verified ? '#1e1e20' : '#ffffff';
-
   return (
     <div className={styles.container}>
       <Head>
@@ -81,7 +80,7 @@ const Home: NextPage = () => {
             options={optionsNetworks}
             placeholder="Select network"
             setFieldValue={setFieldValue}
-            errorMessage={errors?.network || ''}
+            errorMessage={errors.network || ''}
             myCustomOptions={AddressessSelectComponent}
           />
           <BaseInput
@@ -91,7 +90,7 @@ const Home: NextPage = () => {
             value={values.codeId}
             handleChange={handleChange}
             placeholder="Enter code id"
-            errorMessage={errors?.codeId || ''}
+            errorMessage={errors.codeId || ''}
           />
           <div className={styles.submitContainer}>
             <BaseButton keyPress="Enter" text="Search" onClick={handleSubmit} />

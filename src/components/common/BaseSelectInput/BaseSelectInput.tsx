@@ -22,7 +22,7 @@ interface ISelectInputProps {
   isClearable?: boolean;
   marginBottom?: number;
   isSearcheable?: boolean;
-  errorMessage: FormikErrors<string> | string;
+  errorMessage: string;
 }
 
 const BaseSelectInput: FC<ISelectInputProps> = ({

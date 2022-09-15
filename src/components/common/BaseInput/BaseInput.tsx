@@ -20,7 +20,7 @@ interface Props {
   autoComplete?: string;
   onPaste?: (e: any) => void;
   onBlur?: (value: string) => void;
-  errorMessage?: string;
+  errorMessage: string;
   onKeyPress?: (value: string) => void;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -56,6 +56,7 @@ const BaseInput: FC<Props> = ({
       {label && <BaseText bold marginBottom={2} text={label} />}
       <input
         min="0"
+        type={type}
         value={value}
         ref={inputRef}
         name={inputName}
@@ -66,11 +67,10 @@ const BaseInput: FC<Props> = ({
         maxLength={maxLength}
         onBlur={() => onBlur}
         onChange={handleChange}
+        className={styles.input}
         placeholder={placeholder}
         autoComplete={autoComplete}
         onKeyPress={() => onKeyPress}
-        type={type}
-        className={styles.input}
       />
       {errorMessage && <BaseErrorMessage text={errorMessage} />}
     </div>
