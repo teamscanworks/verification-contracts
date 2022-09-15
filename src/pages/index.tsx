@@ -131,8 +131,8 @@ const Home: NextPage = () => {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/teamscanworks/codebreaker"
           className={styles.socialMediaLinks}
+          href="https://github.com/teamscanworks/codebreaker"
         >
           <AiFillGithub size={30} />
         </a>
