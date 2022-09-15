@@ -1,0 +1,23 @@
+@import "../../../styles/mixings.scss";
+
+.layout {
+  padding: 100px 100px 100px 100px;
+  width: 100%;
+  z-index: 1;
+
+  @include media-breakpoint-between(xs, sm) {
+    padding: 100px 20px 100px 20px;
+  }
+
+  @include media-breakpoint-between(sm, md) {
+    padding: 100px 20px 100px 20px;
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    padding: 150px 100px 100px 100px;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    padding: 150px 400px 100px 400px;
+  }
+}

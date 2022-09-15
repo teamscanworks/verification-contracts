@@ -1,0 +1,19 @@
+.pill {
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 2px;
+  font-family: var(--main-font);
+  color: var(--netural-100);
+  padding: 8px 8px 8px 8px;
+  height: 27px;
+  gap: 5px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+}
+
+.icon {
+  display: flex;
+}

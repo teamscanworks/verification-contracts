@@ -1,0 +1,9 @@
+.icon {
+  stroke: #ffffff;
+  width: 24px;
+  height: 24px;
+
+  &.isSelected {
+    stroke: var(--neutral-700);
+  }
+}

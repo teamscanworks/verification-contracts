@@ -1,0 +1,108 @@
+@import "../../../styles/mixings.scss";
+
+.containerInput {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  margin-top: 2px;
+  border: 1px solid transparent;
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 4px;
+  font-family: var(--main-font);
+  box-sizing: border-box;
+  height: 48px;
+  background-color: var(--neutral-100);
+  border: 1px solid var(--neutral-600);
+
+  &:focus {
+    outline: 0;
+    border-radius: 4px;
+    border: 1px solid var(--primary-200);
+  }
+
+  &:disabled {
+    background-color: var(--neutral-800);
+    color: var(--neutral-500);
+    cursor: no-drop;
+  }
+
+  &:hover {
+    border: 1px solid var(--neutral-200);
+    border-radius: 4px;
+  }
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--neutral-100);
+    font-family: var(--main-font);
+  }
+
+  &.iconLeft {
+    padding-left: 50px;
+
+    &::placeholder {
+      padding: 0px;
+    }
+  }
+
+  &.isError {
+    border: 1px solid var(--red-200);
+  }
+
+  .viewPassword {
+    color: var(--input-icon-eye-password);
+    position: absolute;
+    right: 12px;
+    top: 42px;
+    cursor: pointer;
+  }
+
+  .containerIcon {
+    cursor: pointer;
+    top: 10px;
+    right: 15px;
+    position: absolute;
+  }
+
+  input[type="date"] {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  input[type="date"]::-webkit-clear-button {
+    font-size: 16px;
+  }
+
+  input[type="text"],
+  textarea {
+    background-color: var(--neutral-800);
+  }
+
+  input[type="date"]::-webkit-inner-spin-button {
+    height: 30px;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    font-size: 18px;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    color: var(--bright-pink);
+    cursor: pointer;
+  }
+}
+
+.iconLeft > svg {
+  position: absolute;
+  top: 38px;
+  left: 13px;
+  stroke: white;
+  width: 25px;
+  height: 25px;
+}
