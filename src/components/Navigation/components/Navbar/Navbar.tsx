@@ -8,7 +8,7 @@ const Navbar: FC = () => {
   return (
     <div className={styles.header}>
       <div className={styles.containerActions}>
-        <BaseText size={25} bold text="Contract regitry" />
+        <BaseText size={25} bold text="CW Contracts Registry" />
       </div>
       <a
         target="_blank"
